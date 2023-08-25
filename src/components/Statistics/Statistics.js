@@ -1,16 +1,15 @@
-import { List, Span } from "./Statistics.styled"
+import { List, Span, Paragraph } from "./Statistics.styled"
 import { Notification } from "../Notification/Notification"
 
-export const Statistics = ({title,good,neutral,bad,total,positivePercentage}) => {
+export const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
     return (
         <>
-            <h2>{title}</h2>
-           {total === 0 ? <Notification  message="There is no feedback"/> : <List>
-                <li><p>Good:<Span>{good}</Span></p></li>
-                <li><p>Neutral:<Span>{neutral}</Span></p></li>
-                <li><p>Bad:<Span>{bad}</Span></p></li>
-                <li><p>Total:<Span>{total}</Span></p></li>
-                <li><p>Positive feedback:<Span>{positivePercentage}</Span>%</p></li>
+            {total === 0 ? <Notification message="There is no feedback" /> : <List>
+                <li><Paragraph>Good:<Span>{good}</Span></Paragraph></li>
+                <li><Paragraph>Neutral:<Span>{neutral}</Span></Paragraph></li>
+                <li><Paragraph>Bad:<Span>{bad}</Span></Paragraph></li>
+                <li><Paragraph>Total:<Span>{total}</Span></Paragraph></li>
+                <li><Paragraph>Positive feedback:<Span>{positivePercentage}</Span>%</Paragraph></li>
             </List>}
         </>
     );
