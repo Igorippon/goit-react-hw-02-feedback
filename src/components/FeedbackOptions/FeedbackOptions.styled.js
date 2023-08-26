@@ -9,7 +9,7 @@ margin-top: 20px;
 `;
 
 export const Btn = styled.button`
-font-weight: 400;
+font-weight: 500;
 font-size: 24px;
 line-height: 1.11;
 padding: 8px;
