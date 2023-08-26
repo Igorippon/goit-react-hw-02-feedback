@@ -1,11 +1,12 @@
 import { Btn, List } from "./FeedbackOptions.styled";
 
-export const FeedbackOptions = ({ option, onLeaveFeedback }) => {
+export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+
     return (
         <List>
-            <li><Btn type="button" name={option[0]} onClick={onLeaveFeedback}>Good</Btn></li>
-            <li><Btn type="button" name={option[1]} onClick={onLeaveFeedback}>Neutral</Btn></li>
-            <li><Btn type="button" name={option[2]} onClick={onLeaveFeedback}>Bad</Btn></li>
+            {options.map(option => (
+                <li key={option}><Btn type="button" onClick={() => onLeaveFeedback(option)}>{option}</Btn></li>
+            ))}
         </List>
     );
 };

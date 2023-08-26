@@ -14,8 +14,8 @@ export class App extends Component {
 
   handleClick = (evt) => {
     this.setState(prevState => ({
-      [evt.target.name]: prevState[evt.target.name] + 1,
-    }))
+      [evt]: prevState[evt] + 1,
+    }));
   };
 
   countTotalFeedback = () => {
@@ -30,14 +30,14 @@ export class App extends Component {
   };
 
   render() {
-    const option = Object.keys(this.state);
+    const options = Object.keys(this.state);
     const total = this.countTotalFeedback();
     const positivePercentage = this.countPositiveFeedbackPercentage();
     return (
       <Layout>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            option={option}
+            options={options}
             onLeaveFeedback={this.handleClick}
           />
         </Section>
